@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maanaim</title>
+    <%= csrf_meta_tags %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    
+  
+  
+  </head>
+
+  <body>
+    
+    <!-- navbar -->
+    <% if user_signed_in? %>
+      <%= render 'layouts/nav_logado' %>
+    <% else %>
+      <%= render 'layouts/nav_nao_logado' %>
+    <% end %>
+    <!-- end navbar -->
+    <% if notice %>
+    
+    
+    
+    
+     <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= notice %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% if alert %>
+    
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= alert %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <% end %>
+    <div style="min-height: 65vh"> <%= yield %></div>
+ 
+    
+  <div class="py-5 bg-primary text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-4"><img class="center-block img-fluid d-block" src="<%= image_path "maanain-02.png"%>"></div>
+                <div class="col-md-4"><i class="fa fa-fw fa-facebook text-white fa-3x"></i></div>
+                <div class="col-md-4">
+                  <ul class="list-inline text-white">(00) 1234-5678<br>asdasa@mail.com</ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 ">
+              <p class="text-justify my-1 text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient mon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+  </body>
+</html>
